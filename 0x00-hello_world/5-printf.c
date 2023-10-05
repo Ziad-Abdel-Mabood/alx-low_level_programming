@@ -1,7 +1,7 @@
 #include <stdio.h>
 /*
- * Task 5 
- * print using printf() 
+ * Task 5
+ * print using printf()
  * don't forget to add the newline character
  */
 
@@ -12,6 +12,6 @@
  */
 int main(void)
 {
-	printf("with proper grammer, but the outcome is a piece of art,\n");
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 	return (0);
 }
