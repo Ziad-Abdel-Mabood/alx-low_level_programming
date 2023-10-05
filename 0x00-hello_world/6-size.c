@@ -4,10 +4,11 @@
  * print sizes of types on my device
  * use sizeof() operator to declare variables and then print them
  */
+
 /**
  * main - Entry point
  *
- * return : Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
