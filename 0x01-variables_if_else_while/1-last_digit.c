@@ -14,12 +14,12 @@
 int main(void)
 {
 	int n;
+	int l_d;
+	/*last digit*/
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	int l_d;
-	/*last digit*/
 	l_d = n % 10;
 	if (l_d == 0)
 		printf("Last digit of %i is %i and is 0\n", n, l_d);
