@@ -20,8 +20,11 @@ int main(void)
 		{
 			putchar('0' + arr1[i]);
 			putchar('0' + arr2[j]);
-			putchar(',');
-			putchar(' ');
+			if (i < 8)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 		if (j == 9)
 		{
