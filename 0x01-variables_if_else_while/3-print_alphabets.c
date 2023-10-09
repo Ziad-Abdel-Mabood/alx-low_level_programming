@@ -10,17 +10,16 @@
  */
 int main(void)
 {
-	char alpha[] = "abcdefghijklmnopqrstuvwxyz";
-	int i;
-	int j;
+	char lower = 'a';
+	char upper = 'A';
 
-	for (i = 0; i < 26; i++)
+	for (; lower < 'z'; lower++)
 	{
-		putchar(alpha[i]);
+		putchar(lower);
 	}
-	for (j = 0; j < 26; j++)
+	for (; upper < 'Z'; upper++)
 	{
-		putchar(alpha[j]);
+		putchar(upper);
 	}
 	putchar('\n');
 	return (0);
