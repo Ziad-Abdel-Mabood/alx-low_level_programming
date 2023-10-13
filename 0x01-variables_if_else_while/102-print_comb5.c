@@ -22,8 +22,8 @@ int main(void)
 				putchar('0' + (n2 % 10));
 				if (n1 < 98)
 				{
-					putchar(' ');
 					putchar(',');
+					putchar(' ');
 				}
 			}
 			n2++;
