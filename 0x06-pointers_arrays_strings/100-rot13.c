@@ -21,7 +21,7 @@ char *rot13(char *s)
 			if (*(str + i) == set1[k])
 				*(str + i) = set2[k];
 			else if (*(str + i) == set2[k])
-				*(str + i) == set1[k];
+				*(str + i) = set1[k];
 		}
 	}
 	return (str);
