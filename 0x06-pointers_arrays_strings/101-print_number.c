@@ -14,8 +14,41 @@ void print_number(int n)
 		n = n * -1;
 		_putchar('-');
 	}
+	if (n > 999999999)
+	{
+		temp = n % 10000000000;
+		_putchar('0' + (temp / 1000000000));
+	}
+	if (n > 99999999)
+	{
+		temp = n % 1000000000;
+		_putchar('0' + (temp / 100000000));
+	}
+	if (n > 9999999)
+	{
+		temp = n % 100000000;
+		_putchar('0' + (temp / 10000000));
+	}
+	if (n > 999999)
+	{
+		temp = n % 10000000;
+		_putchar('0' + (temp / 1000000));
+	}
+	if (n > 99999)
+	{
+		temp = n % 1000000;
+		_putchar('0' + (temp / 100000));
+	}
+	if (n > 9999)
+	{
+		temp = n % 100000;
+		_putchar('0' + (temp / 10000));
+	}
 	if (n > 999)
-		_putchar('0' + (n / 1000));
+	{
+		temp = n % 10000;
+		_putchar('0' + (temp / 1000));
+	}
 	if (n > 99)
 	{
 		temp = n % 1000;
