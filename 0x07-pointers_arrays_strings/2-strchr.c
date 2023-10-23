@@ -21,6 +21,6 @@ char *_strchr(char *s, char c)
 		}
 	}
 	if (*(s + i) == 0)
-		loc = 0;
+		loc = &s[i];
 	return (loc);
 }
