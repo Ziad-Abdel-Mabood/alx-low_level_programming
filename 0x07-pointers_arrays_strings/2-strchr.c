@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stddef.h>
+
 /**
  * _strchr -	locates a character in a string.
  * @s:		pointer to string.
@@ -21,6 +23,6 @@ char *_strchr(char *s, char c)
 		}
 	}
 	if (*(s + i) == 0)
-		loc = &*(s + i);
+		loc = NULL;
 	return (loc);
 }
