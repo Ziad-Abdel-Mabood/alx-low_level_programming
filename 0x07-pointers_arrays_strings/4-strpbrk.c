@@ -32,6 +32,6 @@ char *_strpbrk(char *s, char *accept)
 		k = 0;
 	}
 	if (s[i] == 0 && s[i] != accept[k])
-		match = 0;
+		match = &s[i];
 	return (match);
 }
