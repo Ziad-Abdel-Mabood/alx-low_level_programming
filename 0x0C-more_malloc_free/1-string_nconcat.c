@@ -11,10 +11,10 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *kitty;
-	unsigned int i;
-	unsigned int k;
-	unsigned int s2len;
+	unsigned int i, k, s2len;
 
+	if (s1 = NULL)
+		s1 = "";
 /*
  * getting length of string 2, and limiting n to it
  * so that we don't get extra unneeded bytes.
@@ -26,9 +26,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 /*
  * allocating memory for the two strings.
 */
-	kitty = malloc(sizeof(s1) + (sizeof(char) * n));
+	kitty = malloc(sizeof(s1) + (sizeof(char) * n) + 1);
 	if (kitty == 0)
-		exit(0);
+		return(0);
 	else
 	{
 /*
@@ -44,8 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 /*
  * null terminating the string.
 */
-		if (kitty[i] != 0)
-			kitty[i] = 0;
+		kitty[i] = 0;
 		return (kitty);
 	}
 }
