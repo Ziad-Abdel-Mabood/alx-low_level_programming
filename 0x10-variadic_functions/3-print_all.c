@@ -85,10 +85,8 @@ void _str(va_list a)
 {
 	char *str = va_arg(a, char *);
 
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
+	switch ((int)(!str))
+	case 1:
+		str = "(nil)";
 	printf("%s", str);
 }
