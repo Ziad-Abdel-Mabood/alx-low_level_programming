@@ -63,7 +63,7 @@ void _char(va_list a)
  */
 void _int(va_list a)
 {
-	printf("%i", va_arg(a, int));
+	printf("%d", va_arg(a, int));
 }
 
 /**
