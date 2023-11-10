@@ -35,7 +35,7 @@ void print_all(const char *const format, ...)
 			if (format[i] == identifiers[j].name[0])
 			{
 				identifiers[j].f(args);
-				if (i < num_args)
+				if (i < num_args - 1)
 					printf(", ");
 			}
 			j++;
