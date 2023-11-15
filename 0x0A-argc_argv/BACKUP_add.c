@@ -8,18 +8,16 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0;
-	char *c;
+	int sum, i, j;
 
-	while (--argc)
+	if (argc <= 1)
+		printf("0\n");
+	for (i = 1; argv[i]; i++)
 	{
-		for (c = argv[argc]; *c; c++)
-			if (*c < '0' || *c > '9')
-			{
-				printf("Error\n");
-				return (1);
-			}
-		sum += atoi(argv[argc]);
+		for (j = 0; argv[i][j]; j++)
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+				return (printf("Error\n"), 1);
+		sum += atoi(argv[i]);
 	}
 	printf("%i\n", sum);
 	return (0);
