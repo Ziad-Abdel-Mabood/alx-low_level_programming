@@ -20,12 +20,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file_desc < 0 || filename == NULL)
 		return (0);
 
-	rd = read(file_desc, buffer, letters);
-	if (rd < 0)
-		return (0);
+	while ((rd = read(file_desc, buffer, letters)) > 0)
+	{
+		buffer[rd] = '\0';
+		if (rd < 0)
+			return (0);
+	}
 
 	prnt = write(1, buffer, letters);
-	if (prnt < 0 || prnt != rd)
+	if (prnt < 0 || prnt != (ssize_t)letters)
 		return (0);
 
 	free(buffer);
