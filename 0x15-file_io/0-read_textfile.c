@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * read_textfile -	reads a textfile and prints it to the
@@ -10,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t prnt = 0, rd = 0;
+	ssize_t prnt;
 	int file_desc;
 	char *buffer;
 
@@ -22,14 +21,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	file_desc = open(filename, O_RDONLY);
-	if (file_desc < 0)
+	if (file_desc == -1)
 	{
 		free(buffer);
 		return (0);
 	}
 
-	while ((rd = read(file_desc, buffer, letters)) != 0)
-		prnt = write(1, buffer, rd);
+	while ((prnt = read(file_desc, buffer, letters)) != 0)
+		prnt = write(1, buffer, prnt);
 
 	free(buffer);
 	close(file_desc);
