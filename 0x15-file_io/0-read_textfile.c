@@ -10,11 +10,11 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t prnt = 0, rd;
+	ssize_t prnt = 0, rd = 0;
 	int file_desc;
 	char *buffer;
 
-	if (/*!letters ||*/ !filename)
+	if (!letters || !filename)
 		return (0);
 
 	buffer = malloc(letters);
@@ -23,19 +23,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file_desc = open(filename, O_RDONLY);
 	if (file_desc < 0)
-		return (0);
-
-	while ((rd = read(file_desc, buffer, letters)) != 0)
 	{
-		buffer[rd] = '\0';
-		if (rd < 0)
-			return (0);
-		prnt = write(1, buffer, rd);
-		if (prnt < 0 || prnt != rd)
-			return (0);
+		free(buffer);
+		return (0);
 	}
 
-	printf("rd = %ld\nprnt = %ld\n", rd, prnt);
+	while ((rd = read(file_desc, buffer, letters)) != 0)
+		prnt = write(1, buffer, rd);
 
 	free(buffer);
 	close(file_desc);
