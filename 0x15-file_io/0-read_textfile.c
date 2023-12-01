@@ -20,8 +20,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file_desc < 0)
 		return (0);
 
-	while ((prnt = read(file_desc, buffer, letters)) != 0)
-		prnt = write(1, buffer, prnt);
+	prnt = read(file_desc, buffer, letters);
+	prnt = write(1, buffer, prnt);
 
 	close(file_desc);
 	return (prnt);
