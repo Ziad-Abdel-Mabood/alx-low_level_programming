@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * size_t dlistint_len(const dlistint_t *h);
- * @h:	list header.
- * Return:	number of elements in a linked list.
+ * dlistint_len -	returns the number of elements in linked list.
+ * @h:			list header.
+ * Return:		number of elements in a linked list.
  */
 size_t dlistint_len(const dlistint_t *h)
 {
