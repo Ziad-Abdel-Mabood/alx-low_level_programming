@@ -14,11 +14,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int file_desc;
 	char *buffer;
 
-	if (/*!letters ||*/ !filename)
-		return (0);
-
 	buffer = malloc(letters);
-	if (buffer == NULL)
+	if (!buffer || !filename)
 		return (0);
 
 	file_desc = open(filename, O_RDONLY);
@@ -34,8 +31,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (prnt < 0 || prnt != rd)
 			return (0);
 	}
-
-	printf("rd = %ld\nprnt = %ld\n", rd, prnt);
 
 	free(buffer);
 	close(file_desc);
