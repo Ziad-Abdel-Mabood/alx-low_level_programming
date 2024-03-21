@@ -1,2 +1,2 @@
 all: school.c
-	gcc school.c -o school
+	gcc $(wildcard *.c) -o school

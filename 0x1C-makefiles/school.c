@@ -1,10 +1,15 @@
 #include <stdio.h>
 
+#ifdef OTHER_MAIN
 int other_main(void);
+#endif
 
 int main(void)
 {
+#ifdef OTHER_MAIN
 	other_main();
+#endif
+
 	printf(
 		"j#0000000000000000000000000000000000000\n"
 		"j#000000000000000000@Q**g00000000000000\n"
