@@ -1,8 +1,12 @@
-#include <stdio.h>
-#define OTHER_MAIN
+#include "m.h"
 
-int other_main(void)
+/**
+ * main - Entry point
+ *
+ * Return: Always 
+ */
+int main(void)
 {
-	printf("other_main\n");
-	return(0);
+	print_school();
+	return (EXIT_SUCCESS);
 }
