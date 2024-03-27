@@ -1,8 +1,8 @@
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 NAME = school
-RM = rm
+RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY = all re clean oclean fclean
@@ -14,13 +14,11 @@ all : ${OBJ}
 	${CC} ${CFLAGS}	-c -o $@ $<
 
 clean :
-	${RM} -f ${NAME} $(wildcard *~)
+	${RM} ${NAME} *~
 
 oclean :
 	${RM} -f ${OBJ}
 
-fclean :
-	${RM} -f ${NAME} $(wildcard *~)
-	${RM} -f ${OBJ}
+fclean : clean oclean
 
-re : oclean all
+re : fclean all
