@@ -7,4 +7,4 @@ all : ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
 ${OBJ} : ${SRC}
-	${CC} $< -c -o $@
+	${CC}	-c -o $@ $< 
