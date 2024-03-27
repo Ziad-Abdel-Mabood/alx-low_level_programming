@@ -9,9 +9,6 @@ RM = rm
 all : ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
-%.o : %.c
-	${CC}	-c -o $@ $<
-
 clean :
 	${RM} -f ${NAME} $(wildcard *~)
 
